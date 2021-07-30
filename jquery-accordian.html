@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>jQuery Accordian</title>
+
+    <style>
+        .container {
+          max-width: 500px;
+          margin: auto;
+        }
+    
+        .remainder-text {
+          display: none;
+        }
+    
+        button {
+          background: transparent;
+          border: none;
+        }
+    
+        button:hover {
+          cursor: pointer;
+        }
+      </style>
+    
+</head>
+<body>
+    <h1>jQuery Accordian</h1>
+    <div class="container">
+        <p class="intro">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec dui arcu, convallis aliquet augue nec, bibendum pretium tortor. Suspendisse eget nunc luctus, varius ex nec, tincidunt diam. Integer sit amet ligula turpis. Aliquam et porttitor dolor. Suspendisse a metus non eros blandit suscipit. Aliquam erat volutpat. Curabitur eget tincidunt tellus. Nunc porta eu tellus non molestie.</p>
+        <p class="remainder-text">Curabitur tincidunt libero vitae ipsum accumsan, ut tempor ante varius. In ac lacus urna. Mauris efficitur volutpat lobortis. Duis dictum porta suscipit. Vivamus nec mauris leo. Mauris bibendum ornare aliquet. Aliquam tempus magna eu nisi aliquet iaculis. Phasellus quis justo a risus consectetur pellentesque.</p>
+    
+        <button type="button" class="toggle-button">show more</button>
+    </div>
+
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    <script>
+        $(document).ready(function() {
+            console.log('jquery is working');
+        });
+    </script>
+
+<script>
+    $(document).ready(function() {
+      $('.toggle-button').on('click', function(){
+        const buttonText = $(this).text().toLowerCase();
+
+        $(this).prev('.remainder-text').slideToggle();
+        $(this).text(buttonText === 'show more' ? 'show less' : 'show more');
+      });
+    });
+  </script>
+
+</body>
+</html>
